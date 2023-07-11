@@ -5,6 +5,20 @@
 # This file is for hand-on practice in shell scripting DAY 1
 ################
 
+set -x
+
+my_function() {
+    local my_variable="Hello, World!"   # Declaring a local variable
+    echo "Inside function: $my_variable"
+}
+
+my_variable="Goodbye, World!"           # Variable with the same name exists outside the function
+echo "Before function: $my_variable"
+
+my_function                             # Calling the function
+
+echo "After function: $my_variable"      # Variable value outside the function remains unchanged
+
 # Function to greet a person
 greet() {
     local name=$1 #$1 is "john"
